@@ -1,0 +1,26 @@
+{
+  "name": "grant.ly",
+  "version": "0.1.0",
+  "homepage": "https://github.com/gwiant/grant.ly",
+  "authors": [
+    "grant wiant <gwiant@me.com>"
+  ],
+  "description": "grant.ly site",
+  "main": "src/main.js",
+  "keywords": [],
+  "license": "none",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.14",
+    "require-less": "guybedford/require-less#feb3208ff708e03900d5e70b0147a9f6605c9c49",
+    "requirejs-text": "~2.0.12",
+    "requirejs-json": "~0.0.3"
+  }
+}

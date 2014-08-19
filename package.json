@@ -1,0 +1,23 @@
+{
+  "name": "grant.ly",
+  "version": "0.1.0",
+  "description": "grant.ly site",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gwiant/grant.ly"
+  },
+  "keywords": [
+    "grant",
+    "grantly",
+    "grant.ly"
+  ],
+  "author": "grant wiant <gwiant@me.com>",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/gwiant/grant.ly/issues"
+  }
+}

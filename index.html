@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Grant.ly</title>
+    <meta name="description" content="Grant.ly">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="viewport" content="width=device-width, minimal-ui, user-scalable=0, maximum-scale=1, minimum-scale=1, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/entypo.css">
+    <style>
+    html {
+        font-family: 'entypo';
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        -webkit-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        -moz-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        -o-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        background: #1ea5ff;
+        background: -moz-radial-gradient(center, ellipse cover, #1ea5ff 0%, #004c8e 99%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#1ea5ff), color-stop(99%,#004c8e));
+        background: -webkit-radial-gradient(center, ellipse cover, #1ea5ff 0%,#004c8e 99%);
+        background: -o-radial-gradient(center, ellipse cover, #1ea5ff 0%,#004c8e 99%);
+        background: -ms-radial-gradient(center, ellipse cover, #1ea5ff 0%,#004c8e 99%);
+        background: radial-gradient(ellipse at center, #1ea5ff 0%,#004c8e 99%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ea5ff', endColorstr='#004c8e',GradientType=1 );
+        /* orangy red
+        background: #ff651e;
+        background: -moz-radial-gradient(center, ellipse cover, #ff651e 0%, #91001f 99%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ff651e), color-stop(99%,#91001f));
+        background: -webkit-radial-gradient(center, ellipse cover, #ff651e 0%,#91001f 99%);
+        background: -o-radial-gradient(center, ellipse cover, #ff651e 0%,#91001f 99%);
+        background: -ms-radial-gradient(center, ellipse cover, #ff651e 0%,#91001f 99%);
+        background: radial-gradient(ellipse at center, #ff651e 0%,#91001f 99%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff651e', endColorstr='#91001f',GradientType=1 );
+        */
+        /* red
+        background: #ff4732;
+        background: -moz-radial-gradient(center, ellipse cover, #ff8b7e 0%, #c90000 100%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ff4732), color-stop(100%,#c90000));
+        background: -webkit-radial-gradient(center, ellipse cover, #ff4732 0%,#c90000 100%);
+        background: -o-radial-gradient(center, ellipse cover, #ff4732 0%,#c90000 100%);
+        background: -ms-radial-gradient(center, ellipse cover, #ff4732 0%,#c90000 100%);
+        background: radial-gradient(ellipse at center, #ff4732 0%,#c90000 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4732', endColorstr='#c90000',GradientType=1 );
+        */
+        /* light grey
+        background: #f9f9f9;
+        background: -moz-radial-gradient(center, ellipse cover, #f9f9f9 0%, #eaeaea 100%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#f9f9f9), color-stop(100%,#eaeaea));
+        background: -webkit-radial-gradient(center, ellipse cover, #f9f9f9 0%,#eaeaea 100%);
+        background: -o-radial-gradient(center, ellipse cover, #f9f9f9 0%,#eaeaea 100%);
+        background: -ms-radial-gradient(center, ellipse cover, #f9f9f9 0%,#eaeaea 100%);
+        background: radial-gradient(ellipse at center, #f9f9f9 0%,#eaeaea 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#eaeaea',GradientType=1 );
+        */
+    }
+    .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0px 0 0 0px;
+        overflow: hidden;
+    }
+    main {
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+    .item {
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        text-align: center;
+        height: 100px;
+        width: 100px;
+        color: #80cdff;
+        border-radius: 50px;
+        margin: -50px 0 0 -50px;
+        -webkit-blend-mode: screen;
+        cursor: pointer;
+        outline: 0;
+        opacity: 0;
+    }
+    .item::-moz-focus-inner { 
+        border: 0; 
+    }
+    .item .icon {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 100%;
+        color: #80cdff;
+        font-size: 3em;
+        font-family: inherit;
+        overflow: hidden;
+        line-height: 100px;
+        border-radius: inherit;
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+        text-shadow: 0 0 10px rgba(255,255,255,0), 0 0 5px rgba(255,255,255,0);
+        -webkit-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        -moz-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        -o-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    }
+    .item .border {
+        display: block;
+        font-family: 'entypo';
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 3px solid #80cdff;
+        border-radius: inherit;
+        box-shadow: 0 0 10px rgba(255,255,255,0), 0 0 5px rgba(255,255,255,0), inset 0 0 10px rgba(255,255,255,0), inset 0 0 5px rgba(255,255,255,0);
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(1px, 1px, 0px);
+        -webkit-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        -moz-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        -o-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    }
+    .item.active .border {
+        border: 3px solid #fff;
+        box-shadow: 0 0 10px rgba(255,255,255,0.5), 0 0 5px rgba(255,255,255,0.5), inset 0 0 10px rgba(255,255,255,0.5), inset 0 0 5px rgba(255,255,255,0.5);
+    }
+    .item.active .icon {
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255,255,255,0.5), 0 0 5px rgba(255,255,255,0.5);
+    }
+    .item .close {
+        opacity: 0;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        background: black;
+        border-radius: 20px;
+        -webkit-transition: all 0.681s inherit;
+        -moz-transition: all 0.681s inherit;
+        -o-transition: all 0.681s inherit;
+        transition: all 0.681s inherit;
+    }
+    .item.open .close {
+        opacity: 1;
+    }
+    .item.open .border {
+        opacity: 0;
+    }
+    
+    #home .icon {
+        font-size: 6em;
+        line-height: 130px;
+    }
+    
+    #portfolio .icon {
+        font-size: 3.5em;
+        line-height: 100px;
+    }
+    
+    #ideas .icon {
+        font-size: 3.5em;
+        line-height: 100px;
+    }
+    
+    #social .icon {
+        font-size: 3.5em;
+        line-height: 100px;
+    }
+    
+    #google .icon {
+        font-size: 3.5em;
+        line-height: 100px;
+    }
+    
+    #twitter .icon {
+        font-size: 3.5em;
+        line-height: 100px;
+    }
+    
+    #linkedin .icon {
+        font-size: 3.5em;
+        line-height: 100px;
+    }
+    
+    #github .icon {
+        font-size: 3.5em;
+        line-height: 100px;
+    }
+    
+    #facebook .icon {
+        font-size: 3.5em;
+        line-height: 100px;
+    }
+    
+    #apple .icon {
+        font-size: 3.5em;
+        line-height: 100px;
+    }
+    
+    #instagram .icon {
+        font-size: 3.5em;
+        line-height: 100px;
+    }
+    .pulse {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50px;
+        width: 100px;
+        height: 100px;
+        margin: -50px 0 0 -50px;
+        border-radius: 50px;
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(1px, 1px, 0px);
+        border: 3px solid rgba(255,255,255,1);
+        -webkit-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        -moz-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        -o-transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        transition: all 0.681s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    }
+    .breadcrumbs {
+        position: absolute;
+        top: 0; 
+        left: 0;
+        right: 0;
+        height: 25px;
+        width: 100%;
+    }
+    .breadcrumbs .crumb {
+        position: relative;
+        display: inline;
+        color: rgba(255,255,255,0.681);
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        letter-spacing: 0.05em;
+        font-size: .8em;
+        font-weight: 200;
+        line-height: 25px;
+        padding: 0 0 0 15px;
+        cursor: pointer;
+    }
+    .breadcrumbs .crumb:first-child {
+        padding: 0 0 0 10px;
+    }
+    .breadcrumbs .crumb:first-child:before {
+        content: "";
+    }
+    .breadcrumbs .crumb:before {
+        position: absolute;
+        left: 3px;
+        top: 0;
+        content: "› ";
+        font-size: 2em;
+        height: 13px;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 2em;
+        font-weight: 100;
+        line-height: 13px;
+        overflow: hidden;
+    }
+    </style>
+    <script>
+	  !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+	  arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+	  d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+	  insertBefore(d,q)}(window,document,'script','_gs');
+	  _gs('GSN-486780-B');
+	</script>
+  </head>
+  <body>
+    <div id="container" class="container">
+        <div id="breadcrumbs" class="breadcrumbs"></div>
+        <main id="main"><div id="childRing" class="ring"></div></main>
+    </div>
+    <script>
+    // copyright 2014 grant wiant : grant@grant.ly
+    GW = (function (window, undefined) {
+
+        function GW () {
+        
+            var self = this;
+        
+            // content and content structure
+            this.data = {
+                home: {
+                    id: 'home',
+                    label: 'home',
+                    e: null,
+                    icon: 'icon-user',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: ['portfolio', 'social', 'ideas', 'about']
+                },
+                ideas: {
+                    id: 'ideas',
+                    label: 'ideas',
+                    icon: 'icon-lamp',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: ['idea1', 'idea2', 'idea3', 'idea4', 'idea5']
+                },
+                idea1: {
+                    id: 'idea1',
+                    label: 'idea 1',
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                idea2: {
+                    id: 'idea2',
+                    label: 'idea 2',
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                idea3: {
+                    id: 'idea3',
+                    label: 'idea 3',
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                idea4: {
+                    id: 'idea4',
+                    label: 'idea 4',
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                idea5: {
+                    id: 'idea5',
+                    label: 'idea 5',
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                social: {
+                    id: 'social',
+                    label: 'social',
+                    e: null,
+                    icon: 'icon-shareable',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: ['twitter', 'google', 'facebook', 'linkedin', 'instagram', 'github']
+                },
+                twitter: {
+                    id: 'twitter',
+                    label: 'twitter',
+                    e: null,
+                    href: "https://twitter.com/gwiant",
+                    icon: 'icon-twitter',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                facebook: {
+                    id: 'facebook',
+                    label: 'facebook',
+                    e: null,
+                    href: "https://www.facebook.com/grantholladay",
+                    icon: 'icon-facebook',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                linkedin: {
+                    id: 'linkedin',
+                    label: 'linkedin',
+                    e: null,
+                    href: "https://www.linkedin.com/in/grantwiant",
+                    icon: 'icon-linkedin',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                github: {
+                    id: 'github',
+                    label: 'github',
+                    e: null,
+                    href: "https://github.com/gwiant",
+                    icon: 'icon-github',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                instagram: {
+                    id: 'instagram',
+                    label: 'Instagram',
+                    e: null,
+                    href: "http://instagram.com/gwiant",
+                    icon: 'icon-instagrem',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                google: {
+                    id: 'google',
+                    label: 'google+',
+                    e: null,
+                    href: "https://plus.google.com/115962870005268785635/posts",
+                    icon: 'icon-gplus',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                about: {
+                    id: 'about',
+                    label: 'About',
+                    e: null,
+                    icon: 'icon-info',
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                contact: {
+                    id: 'contact',
+                    label: 'Contact',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                portfolio: {
+                    id: 'portfolio',
+                    label: 'Portfolio',
+                    e: null,
+                    icon: 'icon-briefcase',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: ['resilient', 'apple', 'dell', 'current', 'like', 'pricelock', 'memeo', 'greendimes']
+                },
+                resilient: {
+                    id: 'resilient',
+                    label: 'Resilient Networks',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                apple: {
+                    id: 'apple',
+                    label: 'Apple',
+                    e: null,
+                    icon: 'icon-apple',
+                    active: false,
+                    fontFamily: 'entypo',
+                    hash: null,
+                    visible: false,
+                    children: ['apple1', 'apple2', 'apple3', 'apple4', 'apple5']
+                },
+                apple1: {
+                    id: 'apple1',
+                    label: '1',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                apple2: {
+                    id: 'apple2',
+                    label: '2',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                apple3: {
+                    id: 'apple3',
+                    label: '3',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                apple4: {
+                    id: 'apple4',
+                    label: '4',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                apple5: {
+                    id: 'apple5',
+                    label: '5',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                dell: {
+                    id: 'dell',
+                    label: 'Dell',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: ["dell1","dell2","dell3","dell4","dell5","dell6","dell7","dell8","dell9"]
+                },
+                dell1: {
+                    id: 'dell1',
+                    label: 'Dell 1',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                dell2: {
+                    id: 'dell2',
+                    label: 'Dell 2',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                dell3: {
+                    id: 'dell3',
+                    label: 'Dell 3',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                dell4: {
+                    id: 'dell4',
+                    label: 'Dell 4',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                dell5: {
+                    id: 'dell5',
+                    label: 'Dell 5',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                dell6: {
+                    id: 'dell6',
+                    label: 'Dell 6',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                dell7: {
+                    id: 'dell7',
+                    label: 'Dell 7',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                dell8: {
+                    id: 'dell8',
+                    label: 'Dell 8',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                dell9: {
+                    id: 'dell9',
+                    label: 'Dell 9',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                current: {
+                    id: 'current',
+                    label: '4',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                like: {
+                    id: 'like',
+                    label: 'Like',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                pricelock: {
+                    id: 'pricelock',
+                    label: 'Pricelock',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                memeo: {
+                    id: 'memeo',
+                    label: 'memeo',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                },
+                greendimes: {
+                    id: 'greendimes',
+                    label: 'Green Dimes',
+                    e: null,
+                    icon: null,
+                    active: false,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    hash: null,
+                    visible: false,
+                    children: []
+                }
+            };
+            
+            this.content = Object.create(null);
+            
+            this.crumbs = Object.create(null);
+        
+            // settings
+            this.settings = Object.create(null);
+            this.settings.userAgent = window.navigator.userAgent;
+            this.settings.isChrome = /Chrome/i.test(this.settings.userAgent);
+            this.settings.isSafari = ( !this.settings.isChrome && /Safari/i .test(this.settings.userAgent) );
+            this.settings.isOpera = /Opera/i.test(this.settings.userAgent);
+            this.settings.isFirefox = /Firefox/i.test(this.settings.userAgent);
+            this.settings.isIE = /IE/i.test(this.settings.userAgent);
+            this.settings.isIphone = /iPhone/i.test(this.settings.userAgent);
+            this.settings.isIpod = /iPod/i.test(this.settings.userAgent);
+            this.settings.isIpad = /iPad/i.test(this.settings.userAgent);
+            this.settings.isAndroid = /Android/i.test(this.settings.userAgent);
+            this.settings.isWindowPhone = /Windows Phone/i.test(this.settings.userAgent);
+            this.settings.width = window.innerWidth;
+            this.settings.height = window.innerHeight;
+            this.settings.childRadius = 115;
+            this.settings.itemWidth = 100;
+            this.settings.itemHeight = 100;
+            this.settings.transitionTime = 0.681;
+            this.settings.orientation = null;
+            this.settings.transitionDelay = (this.settings.transitionTime*0.0329);
+            this.settings.transitionDelayIncrementor = (this.settings.transitionTime*2.1);
+            this.settings.isMobile = this.isMobile();
+            this.settings.activeContent = null;
+            this.settings.isInTransition = false;
+            this.settings.lastActiveContent = null;
+            this.settings.addEventMethod = "addEventListener";
+            this.settings.easing = "cubic-bezier(0.680, -0.550, 0.265, 1.550)";
+            this.settings.pulseStyle = "-{stylePrefix}-transform: translate3d({x}px, {y}px, 0px) scale({scale}); transform: translate3d({x}px, {y}px, 0px) scale({scale}); -{stylePrefix}-transition: all {transitionTime}s ease-out; transition: all {transitionTime}s ease-out; opacity: {opacity}; -{stylePrefix}-transform-style: preserve-3d; -{stylePrefix}-backface-visibility: hidden; width: {width}px; height: {height}px; border-radius: {borderRadius}px; margin: {marginTop}px 0 0 {marginLeft}px;";
+            
+            if ( this.settings.isIE ) {
+                this.settings.addEventMethod = "attachEvent";
+            }
+            
+            window.AudioContext = window.AudioContext || window.webkitAudioContext || null;
+
+            if ( window.AudioContext && this.settings ) {
+                this.settings.audioContext = new window.AudioContext();
+            }
+            
+            this.pulses = Object.create(null);
+            
+            if ( this.settings.isChrome || this.settings.isSafari ) {
+                this.settings.stylePrefix = 'webkit';
+            } else if ( this.settings.isOpera ) {
+                this.settings.stylePrefix = 'o';
+            } else if ( this.settings.isFirefox ) {
+                this.settings.stylePrefix = 'moz';
+            }
+            
+            // element references
+            this.dom = Object.create(null);
+            this.dom.container = document.getElementById('container');
+            //this.dom.container.setAttribute('style', this.format('-{stylePrefix}-transform: translate3d(0px, 0px, 0px); transform: translate3d(0px, 0px, 0px); -{stylePrefix}-transform-style: preserve-3d; -{stylePrefix}-backface-visibility: hidden;', { stylePrefix: this.settings.stylePrefix }));
+            this.dom.main = document.getElementById('main');
+            this.dom.scene = document.getElementById('scene');
+            this.dom.crumbs = document.getElementById('breadcrumbs');
+        
+            this.settings.transitionEndEvent = this.getTransitionEndEvent();
+            
+            this.ContentModel = function ContentModel(contentItem) {
+                
+                this.visible = false;
+                this.icon = contentItem.icon;
+                this.id = contentItem.id;
+                this.fontFamily = contentItem.fontFamily;
+                this.label = contentItem.label;
+                this.active = contentItem.active;
+                this.children = contentItem.children;
+                this.href = contentItem.href ? contentItem.href : null;
+                this.path = contentItem.id;
+                this.parent = self.getParent(this.id);
+                this.el = this.newElement();
+                
+                this.reset();
+                
+            };
+            
+            this.ContentModel.prototype.reset = function reset() {
+                
+                this.css = "-{stylePrefix}-transform: translate3d({x}px, {y}px, 0px) scale({scale}); transform: translate3d({x}px, {y}px, 0px) scale({scale}); -{stylePrefix}-transition: all {transitionTime}s {easing}; opacity: {opacity}; transition: all {transitionTime}s {easing}; opacity: {opacity}; -{stylePrefix}-transform-style: preserve-3d; -{stylePrefix}-backface-visibility: hidden; display: {display}; width: {width}px; height: {height}px; border-radius: {borderRadius}px; margin: {marginTop}px 0 0 {marginLeft}px; cursor: {cursor}; transition-delay: {transitionDelay}s; -{stylePrefix}-transition-delay: {transitionDelay}s; border-color: red; font-family: {fontFamily}; font-weight: 400;";
+                this.easing = self.settings.easing;
+                this.stylePrefix = self.settings.stylePrefix;
+                this.display = "block";
+                this.size = 100;
+                this.width = this.size;
+                this.height = this.size;
+                this.borderRadius = ( this.size / 2 );
+                this.x = 0;
+                this.y = 0;
+                this.angle = 0;
+                this.transitionTime = self.settings.transitionTime;
+                this.opacity = 0;
+                this.scale = 0;
+                this.marginTop = ( 0 - ( this.height / 2 ) );
+                this.marginLeft = ( 0 - ( this.width / 2 ) );
+                this.cursor = "pointer";
+                this.isOpen = false;
+                this.transitionDelay = self.settings.transitionDelay;
+                
+                this.update();
+                
+            };
+            
+            this.ContentModel.prototype.update = function update() {
+                
+                this.marginTop = ( 0 - ( this.height / 2 ) );
+                this.marginLeft = ( 0 - ( this.width / 2 ) );
+
+                if ( this.el ) {
+                    //this.el.style.cssText = this.formatCSS();
+                    
+                    this.el.style[this.stylePrefix+'Transform'] = 'translate3d('+this.x+'px, '+this.y+'px, 0px) scale('+this.scale+')';
+                    this.el.style.transform = 'translate3d('+this.x+'px, '+this.y+'px, 0px) scale('+this.scale+')';
+                    this.el.style[this.stylePrefix+'Transition'] = 'all '+this.transitionTime+'s '+this.easing;
+                    this.el.style.opacity = this.opacity;
+                    this.el.style.transition = 'all '+this.transitionTime+'s '+this.easing;
+                    this.el.style[this.stylePrefix+'TransformStyle'] = 'preserve-3d';
+                    this.el.style[this.stylePrefix+'BackfaceVisibility'] = 'hidden';
+                    this.el.style.display = this.display;
+                    this.el.style.width = this.width+'px';
+                    this.el.style.height = this.height+'px';
+                    this.el.style.borderRadius = this.borderRadius+'px';
+                    this.el.style.margin = this.marginTop+'px 0 0 '+this.marginLeft+'px'; 
+                    this.el.style.cursor = this.cursor;
+                    this.el.style.transitionDelay = this.transitionDelay+'s';
+                    this.el.style[this.stylePrefix+'TransitionDelay'] = this.transitionDelay+'s';
+                    this.el.style.borderColor = 'red';
+                    this.el.style.fontFamily = this.fontFamily;
+                    this.el.style.fontWeight = 400;
+                }
+                
+            };
+            
+            this.ContentModel.prototype.connect = function connect() {
+                
+                this.el = document.getElementById(this.id);
+                
+            };
+            
+            this.ContentModel.prototype.formatCSS = function formatCSS() {
+
+                return self.format(this.css, this);
+                
+            };
+            
+            this.ContentModel.prototype.activate = function activate () {
+                
+                self.settings.activeContent = self.content[this.id];
+                
+                this.transitionDelay = 0;
+                this.active = true;
+                this.el.classList.add('active');
+                
+                location.hash = this.path;
+                document.title = 'Grant.ly : ' + this.path.replace(/\//g, ' : ');
+                
+            };
+            
+            this.ContentModel.prototype.deactivate = function deactivate () {
+                
+                self.settings.lastActiveContent = self.content[this.id];
+                self.settings.activeContent = null;
+                this.active = false;
+                this.el.classList.remove('active');
+                
+            };
+            
+            this.ContentModel.prototype.remove = function remove() {
+            
+                var self = this;
+                
+                if ( this.el && this.el.parentNode ) {
+                    
+                    this.y = this.x = 0;
+                
+                    this.el = this.el.parentNode.removeChild(this.el);
+                    
+                    this.visible = false;
+                    
+                }
+                
+                this.reset();
+                
+            };
+            
+            this.ContentModel.prototype.visibleChildrenCount = function visibleChildrenCount() {
+            
+                var count = 0, length = this.children ? this.children.length : 0;
+                
+                for (var i=0; i<length; i++) {
+                    
+                    if ( this.children[i].visible ) {
+                        count++;
+                    }
+                    
+                }
+                
+                return count;
+                
+            };
+            
+            this.ContentModel.prototype.childrenVisible = function childrenVisible() {
+                
+                return ( this.visibleChildrenCount()===this.children.length  ) ? true : false;
+                
+            };
+            
+            this.ContentModel.prototype.childrenHidden = function childrenHidden() {
+                
+                return ( this.visibleChildrenCount()===0 ) ? true : false;
+                
+            };
+            
+            this.ContentModel.prototype.newElement = function newElement() {
+                
+                var item = null, closeButton = null, innerRing = null, border = null, icon = null;
+        
+                item = document.createElement('div');
+                item.id = this.id;
+                item.classList.add('item');
+                
+                icon = document.createElement('div');
+                icon.classList.add('icon');
+                if (this.icon && this.icon!=='') {
+                    icon.classList.add(this.icon);
+                }
+                
+                border = document.createElement('div');
+                border.classList.add('border');
+                
+                closeButton = document.createElement('div');
+                closeButton.dataset.id = this.id;
+                closeButton.classList.add("close");
+    
+                item.appendChild(icon);
+                item.appendChild(border);
+                item.appendChild(closeButton);
+            
+                return item;
+                
+            };
+            
+            this.PulseModel = function PulseModel() {
+                
+                this.el = document.createElement('div');
+                this.id = this.el.id = 'pulse' + new Date().getTime();
+                this.el.classList.add('pulse');
+                
+                // pulse css
+                this.stylePrefix = self.settings.stylePrefix;
+                this.opacity = 1;
+                this.x = 0;
+                this.y = 0;
+                this.scale = 1;
+                this.height = 0;
+                this.width = 0;
+                this.marginTop = 0;
+                this.marginLeft = 0;
+                this.transitionTime = self.settings.transitionTime;
+                
+                this.el.setAttribute( 'style', self.format( self.settings.pulseStyle, this ) );
+                
+                this.update();
+                
+            }
+            
+            this.PulseModel.prototype.update = function update () {
+
+                this.el.style.cssText = self.format( self.settings.pulseStyle, this );
+                
+            };
+            
+            this.PulseModel.prototype.remove = function remove () {
+                
+                this.el.parentNode.removeChild(this.el);
+                
+                delete self.pulses[this.id];
+                
+            };
+        
+            this.Breadcrumb = function Breadcrumb (name, url) {
+            
+                this.name = name;
+                this.href = url;
+                
+                // crumb style defauls
+                this.stylePrefix = self.settings.stylePrefix;
+                this.transitionTime = (self.settings.transitionTime/2);
+                this.easing = self.settings.easing;
+                this.opacity = 0;
+            
+                // create crumb element
+                this.el = document.createElement('div');
+                this.el.classList.add('crumb');
+                if (name==="home") {
+                    this.el.innerHTML = this.name;
+                } else {
+                    this.el.innerHTML = this.name;
+                }
+                this.el.dataset.href = this.href;
+                
+                this.el.addEventListener('click', function (e) { location.hash = this.dataset.href; }, false);
+                
+                this.update();
+                
+            }
+            
+            this.Breadcrumb.prototype.inject = function inject () {
+            
+                var thisCrumb = this;
+                
+                this.el = self.dom.crumbs.appendChild(this.el);
+                
+                setTimeout(function () {
+                
+                    thisCrumb.update();
+                
+                    thisCrumb.show();
+                
+                }, 15);
+                
+            };
+            
+            this.Breadcrumb.prototype.show = function show () {
+            
+                var thisCrumb = this;
+            
+                this.opacity = 1;
+                
+                this.transitionTime = self.settings.transitionTime;
+                
+                this.update();
+                                
+            };
+            
+            this.Breadcrumb.prototype.hide = function hide () {
+                
+                this.transitionTime = (self.settings.transitionTime/2);
+                
+                this.opacity = 0;
+                
+                this.update();
+                
+            };
+            
+            this.Breadcrumb.prototype.update = function update () {
+            
+                if ( this.el ) {
+                
+                    this.el.style.opacity = this.opacity;
+                    this.el.style[this.stylePrefix+'Transition'] = 'all '+this.transitionTime+'s '+this.easing;
+                    this.el.style.transition = 'all '+this.transitionTime+'s '+this.easing;
+                    
+                }
+                
+            };
+            
+            this.addEvents();
+        
+        };
+        
+        GW.prototype.isMobile = function isMobile () {
+                    
+            if ( this.settings.isAndroid || this.settings.isIphone || this.settings.isIpad || this.settings.isIpod || this.settings.isWindowPhone ) {
+                return true;
+            } else {
+                return false;
+            }
+            
+        };
+        
+        GW.prototype.setupContent = function setupContent () {
+        
+            var i = 0, content = null;
+            
+            for ( var item in this.data ) {
+            
+                if ( this.data[item] ) {
+                
+                    this.content[item] = new this.ContentModel(this.data[item]);
+                    
+                    i++;
+                
+                }
+                
+            }
+            
+            this.settings.contentCount = i;
+            
+            setTimeout(function () {
+            
+                this.setupContentChildren();
+            
+            }.bind(this), 15);
+            
+        };
+        
+        GW.prototype.setupContentChildren = function setupContentChildren (id) {
+
+            for ( var item in this.content ) {
+            
+                if ( this.content[item] ) {
+                
+                    if ( this.content[item] && this.content[item].children.length>0 ) {
+                        
+                        for (var i=0, l=this.content[item].children.length; i<l; i++) {
+                            
+                            this.content[item].children[i] = this.content[this.content[item].children[i]];
+                            
+                            this.content[item].children[i]['path'] = this.content[item].children[i].parent.path + '/' + this.content[item].children[i].id;
+                            
+                        }
+                    
+                    }
+                    
+                }
+            
+            }
+            
+        };
+        
+        GW.prototype.handleResize = function handleResize (e) {
+            
+            var self = e.app ? e.app : this;
+            
+            self.setDimensions();
+            
+        };
+        
+        GW.prototype.handleOrientationChange = function handleOrientationChange () {
+            
+            var self = e.app || null;
+            
+            if (self) {
+                
+                self.setOrientation();
+                
+            }
+            
+        };
+        
+        GW.prototype.setOrientation = function setOrientation () {
+            
+            this.settings.orientation = window.orientation || null;
+            
+            if (this.settings.orientation) {
+            
+                switch (this.settings.orientation) {
+                    case 0:
+                        this.settings.orientationMode = "portrait";
+                        break;
+                    case -90:
+                        this.settings.orientationMode = "landscape";
+                        break;
+                    case 90:
+                        this.settings.orientationMode = "landscape";
+                        break;
+                    case 180:
+                        this.settings.orientationMode = "portrait";
+                        break;
+                }
+            }
+            
+        };
+        
+        GW.prototype.addEvents = function addEvents () {
+        
+            var self = this,
+                boudInit = this.init.bind(this);
+            
+            document[self.settings.addEventMethod]("DOMContentLoaded", boudInit, false);
+        
+            document[self.settings.addEventMethod](this.settings.transitionEndEvent, function (e) {
+                e.app = self;
+                self.handleTransitionEnd(e);
+            }, false);
+        
+            if ( this.settings.isMobile ) {
+            
+                document[self.settings.addEventMethod]('touchstart', function (e) {
+                    e.app = self;
+                    self.handleInteractEnd(e);
+                    e.preventDefault();
+                }, false);
+                
+                document[self.settings.addEventMethod]('touchmove', function (e) {
+                    e.preventDefault();
+                }, false);
+            
+            } else {
+            
+                document[self.settings.addEventMethod]('mousedown', function (e) {
+                    e.app = self;
+                    self.handleInteractEnd(e);
+                }, false);
+                
+            }
+            
+            window[self.settings.addEventMethod]('resize', function(e) {
+                e.app = self;
+                self.handleResize(e);
+            }, true);
+            
+            window[self.settings.addEventMethod]("orientationchange", function(e) {
+            	e.app = self;
+            	self.handleOrientationChange(e);
+            }, false);
+            
+            window[self.settings.addEventMethod]("hashchange", function(e) {
+            	e.app = self;
+            	self.handleHashChange(e);
+            }, false);
+        
+        };
+        
+        GW.prototype.handleHashChange = function handleHashChange (e) {
+        
+            this.hash = location.hash.replace(/^\/|^\#|\/$/g, '');
+            
+            this.processHash();
+            
+        };
+        
+        GW.prototype.processHash = function processHash () {
+            
+            this.hashArray = this.hash.split('/'), urlArray = [], lastURL = '', self = this;
+            
+            // remove old crumbs
+            for ( var crumb in this.crumbs ) {
+                
+                if ( this.hash.indexOf(crumb)===-1 ) {
+                    
+                    this.crumbs[crumb].hide();
+                    
+                }
+                
+            }
+            
+            if ( this.hash !== "" ) {
+                
+                for (var i=0; i<this.hashArray.length; i++) {
+                
+                    var crumb = this.hashArray[i], href = lastURL+crumb;
+                
+                    urlArray.push(href);
+                    
+                    if ( !this.crumbs[href] ) {
+                        
+                        this.crumbs[href] = new this.Breadcrumb(crumb, href);
+                    
+                        this.crumbs[href].inject();
+                    
+                    } else {
+                        
+                        this.crumbs[href].show();
+                        
+                    }
+                    
+                    lastURL += this.hashArray[i]+'/';
+                    
+                }
+            
+            }
+            
+        };
+        
+        GW.prototype.setDimensions = function setDimensions () {
+        
+            this.settings.width = window.innerWidth;
+            this.settings.height = window.innerHeight;
+        
+        };
+        
+        GW.prototype.pulse = function pulse(e) {
+        
+            var self = e.app,
+                el = e.target.classList.contains('item') ? e.target : self.getAncestorByClassName(e.target, 'item'),
+                id = ( el && el.id ) ? el.id : null,
+                content = this.content[id] || null;
+            
+            if ( el && id ) {
+            
+                var newPulse = new self.PulseModel();
+                
+                self.pulses[newPulse.id] = newPulse;
+                
+                var pulse = self.pulses[newPulse.id];
+                
+                pulse.x = (content.x-4.5);
+                pulse.y = (content.y-4.5);
+                pulse.width = content.width-6;
+                pulse.height = content.height-6;
+                pulse.marginTop = (0-(pulse.height/2));
+                pulse.marginLeft = (0-(pulse.width/2));
+                pulse.scale = content.scale;
+                
+                pulse.update();
+                
+                self.dom.main.appendChild(newPulse.el);
+                
+                pulse.el = document.getElementById(newPulse.id);
+                
+                setTimeout(function () {
+                
+                    pulse.scale *= 2.681;
+                    pulse.opacity = 0;
+                    pulse.update();
+                    
+                }, 15);
+                
+            }
+            
+        };
+        
+        GW.prototype.inArray = function inArray (needle, haystack) {
+        
+            for ( var i=0, l=haystack.length; i<l; i++ ) {
+        
+                if ( needle === haystack[i] ) {
+        
+                    return true;
+        
+                }
+        
+            }
+        
+            return false;
+        
+        };
+        
+        GW.prototype.centerAll = function centerAll (id, callback) {
+            
+            var self = this, parent = this.content[id].parent, children = this.content[parent.id].children, transitionDelay = self.settings.transitionDelay;
+            
+            for ( var i=0, l=children.length; i<l; i++ ) {
+            
+                var child = children[i];
+
+                child.x = 0;
+                child.y = 0;
+                
+                // dont't hide current active
+                if ( child.id===id ) {
+                    child.scale = 1.329;
+                    child.opacity = 1;
+                } else { // hide all others
+                    child.scale = 0;
+                    child.opacity = 0;
+                    child.transitionDelay = 0;
+                    child.transitionTime = self.settings.transitionTime;
+                }
+                
+                child.update();
+        
+            }
+            
+            if ( i === children.length ) {
+                parent.scale = 0;
+                parent.opacity = 0;
+                parent.transitionTime = (self.settings.transitionTime * 0.681);
+                parent.update();
+            }
+        
+            self.handleCallback(callback);
+
+        
+        };
+        
+        GW.prototype.getParent = function getParent (id) {
+        
+            var parent = null;
+            
+            for ( var item in this.content ) {
+                
+                if ( this.content[item] && this.inArray(id, this.content[item].children ) ) {
+                    
+                    parent = this.content[item];
+                    
+                }
+                
+            }
+            
+            return parent;
+            
+        };
+        
+        GW.prototype.injectChildren = function injectChildren (item) {
+        
+            var self = this,
+                item = item,
+                children = item.children,
+                childrenGenerated = 0,
+                content = null,
+                frag = document.createDocumentFragment();
+        
+            if ( !item.childrenVisible() && item.children.length > 0 ) {
+        
+                for ( var i=0, l=children.length; i<l; i++ ) {
+                    
+                    content = children[i];
+                    
+                    if ( content && !content.visible ) {
+                    
+                        content.x = 0;
+                        content.y = 0;
+                        content.opacity = 0;
+                        content.scale = 0.329;
+                        content.tranitionTime = self.settings.transitionTime;
+                        
+                        if ( !content.icon ) {
+                            content.el.children[0].textContent = (i+1);
+                        }
+                        
+                        content.update();
+                    
+                        frag.appendChild(content.el);
+                        
+                        childrenGenerated++;
+                    
+                    }
+        
+                }
+        
+                if ( childrenGenerated > 0 ) {
+                
+                    this.dom.main.insertBefore(frag, item.el);
+                    
+                }
+        
+                setTimeout(function () {
+                
+                    for ( var i=0, l=children.length; i<l; i++ ) {
+                
+                        if ( children[i] && !children[i].visible ) {
+                        
+                            children[i].connect();
+                        
+                        }
+                        
+                        if ( ( i + 1 ) === children.length ) {
+                            
+                            setTimeout(function () {
+                            
+                                self.expandChildren(children, item.id);
+                            
+                            }, 15);
+                            
+                        }
+            
+                    }
+                
+                }, 15);
+        
+            }
+        
+        };
+        
+        GW.prototype.handleInteractEnd = function handleInteractEnd (e) {
+            
+            var self = e.app,
+                el = e.target.classList.contains('item') ? e.target : self.getAncestorByClassName(e.target, 'item'),
+                id = ( el && el.id ) ? el.id : null,
+                content = this.content[id] || null;
+
+            if ( !self.settings.isInTransition ) {
+            
+                if ( el && id && content && !content.isOpen ) {
+                
+                    if ( !content.active ) {
+            
+                        content.activate();
+            
+                    } else {
+            
+                        content.deactivate();
+            
+                    }
+                    
+                    self.pulse(e);
+                
+                	_gs('track', content.path, content.id);
+                
+                    self.settings.isInTransition = true;
+            
+                    if ( content.active ) {
+            
+                        if ( content.x === 0 && content.y === 0 ) {
+            
+                            self.injectChildren(content);
+            
+                        } else {
+                            
+                            self.centerAll( id, function () {
+                                
+                                if ( content.children.length > 0 ) {
+                                
+                                    self.injectChildren(content);
+                                
+                                } else {
+                                
+                                    if ( content.href ) {
+                                        
+                                        location.href = content.href;
+                                        
+                                    } else {
+                                        
+                                        //self.openActive();
+                                        
+                                    }
+                                    
+                                }
+            
+                            });
+            
+                        }
+            
+                    } else {
+                    
+                        if ( content.children.length > 0 ) {
+                        
+                            self.collapseAll(content);
+                            
+                            if ( content.parent ) {
+                            
+                                setTimeout(function () {
+                                    
+                                    content.parent.activate();
+                                    content.transtionTime = (self.settings.transitionTime * 0.681);
+                                    self.showItemWithZoom(content.parent);
+                                    self.injectChildren(content.parent);
+                                
+                                }, self.settings.transitionTime * 1000 );
+                            
+                            } else {
+                                
+                                location.hash = "";
+                                
+                            }
+                        
+                        } else {
+                        
+                            if ( content.parent ) {
+                            
+                                content.parent.activate();
+                                
+                            }
+                            
+                            self.showItemWithZoom(content.parent); 
+                            self.injectChildren(content.parent);
+                            
+                            
+                        }
+            
+                    }
+            
+                }
+                
+            }
+        
+        };
+        
+        GW.prototype.openActive = function openActive () {
+            
+            var self = this, item = this.settings.activeContent;
+            
+            item.width = self.settings.width;
+            item.height = self.settings.height;
+            item.borderRadius = 0;
+            item.border = "0px solid transparent";
+            item.cursor = "default";
+            item.scale = 1;
+            item.transitionTime = self.settings.transitionTime;
+            item.transitionDelay = 0;
+            
+            item.update(function () {
+                item.isOpen = true;
+                item.el.classList.add('open');
+            });
+            
+        };
+        
+        GW.prototype.handleTransitionEnd = function handleTransitionEnd (e) {
+            
+            var self = e.app ? e.app : null,
+                el = e.target ? e.target : null,
+                id = ( e.target && e.target.id ) ? e.target.id : null,
+                content = self.content[id] ? self.content[id] : null,
+                parent = content ? content.parent: null;
+                
+            if ( e.target.classList.contains('crumb') && e.target.style.opacity==0 ) {
+                
+                self.crumbs[e.target.dataset.href].el = e.target.parentNode.removeChild(e.target);
+                
+                setTimeout(function () {
+                
+                    delete self.crumbs[e.target.dataset.href];
+                
+                }, 15);
+                
+            }
+            
+            if ( self && content && ( e.propertyName==='-'+content.stylePrefix+'-transform' || e.propertyName==='transform' ) ) {
+            
+                if ( content.el && content.el.style.opacity==="0" ) {
+                
+                    content.remove();
+                
+                } else if ( content.el && content.el.style.opacity==="1" ) {
+
+                    content.visible = true;
+                    
+                }
+                    
+                if ( self.settings.activeContent && self.settings.activeContent.childrenVisible() ) {
+                    
+                    self.settings.isInTransition = false;
+                    
+                } else if ( !self.settings.activeContent && self.content.home.childrenHidden() ) {
+                    
+                    self.settings.isInTransition = false;
+                    
+                }
+                
+            } else if ( e.target.classList.contains('pulse') && e.target.style.opacity === '0' ) {
+                
+                self.pulses[id].remove();
+                
+            }
+        
+        };
+        
+        GW.prototype.format = function format (str, obj) {
+        
+            return str.replace(/{(\w+)}/g, function ( match, item ) {
+                return typeof obj[item] != 'undefined' ? ( obj[item] == null ? "" : obj[item] ) : "";
+            });
+        
+        };
+        
+        GW.prototype.getTransitionEndEvent = function getTransitionEndEvent () {
+        
+            var t, el = document.createElement('fakeelement');
+        
+            var transitions = {
+                'transition': 'transitionend',
+                'OTransition': 'oTransitionEnd',
+                'MozTransition': 'transitionend',
+                'WebkitTransition': 'webkitTransitionEnd'
+            }
+        
+            for ( t in transitions ) {
+        
+                if ( el.style[t] !== undefined ) {
+        
+                    return transitions[t];
+        
+                }
+        
+            }
+            
+            this.get
+        
+        };
+        
+        GW.prototype.getAncestorByClassName = function getAncestorByClassName (el, className) {
+        
+            if ( !el || !className ) {
+            
+                return false;
+                
+            }
+        
+            while ( el ) {
+        
+                if ( el.nodeType === 1 && el.classList.contains(className) ) {
+        
+                    return el;
+        
+                }
+        
+                el = el.parentNode;
+        
+            }
+        
+            return null;
+        
+        };
+        
+        GW.prototype.getChildByClassName = function getChildByClassName (el, className) {
+        
+            for ( var i=0, l=el.childNodes.length; i<l; i++ ) {
+        
+                if ( el.childNodes[i].classList && el.childNodes[i].classList.contains(className) ) {
+        
+                    return el.childNodes[i];
+        
+                }
+        
+            }
+        
+        };
+        
+        GW.prototype.showItemWithZoom = function showItemWithZoom (content, callback) {
+        
+            var self = this;
+        
+            if ( content && !content.visible && content.el ) {
+            
+                if (!content.icon) {
+                    content.el.children[0].textContent = content.label;
+                }
+                content.y = 0;
+                content.x = 0;
+                content.scale = 0;
+                content.opacity = 0;
+                content.update();
+                
+                this.dom.main.appendChild(content.el);
+                
+                setTimeout(function () {
+                
+                    content.connect();
+                    
+                    setTimeout(function () {
+                    
+                        content.scale = 1.329;
+                        content.opacity = 1;
+                        content.update();
+                        
+                    }, 15);
+                
+                }, 15);
+        
+            }
+            
+            this.handleCallback(callback);
+        
+        };
+        
+        GW.prototype.expandChildren = function expandChildren (children, parentId) {
+        
+            var width = this.settings.itemWidth,
+                height = this.settings.itemHeight,
+                childrenCount = ( parentId==='home' ) ? this.content[parentId].children.length : this.content[parentId].children.length;
+                step = ( ( 2 * Math.PI ) / childrenCount ),
+                angle = -1.58,
+                transDelay = this.settings.transitionDelay;
+                
+            for ( var i=0, l=children.length; i<l; i++ ) {
+            
+                var content = children[i];
+                
+                //content.transitionTime = (this.settings.transitionTime * 0.681);
+            
+                if (content.x === 0) {
+                    content.x = (width / 2 + this.settings.childRadius * Math.cos(angle) - content.width / 2);
+                }
+                
+                if (content.y === 0) {
+                    content.y = (height / 2 + this.settings.childRadius * Math.sin(angle) - content.height / 2);
+                }
+                
+                content.scale = 0.681;
+                content.opacity = 1;
+                
+                if ( i>0 && content.transitionDelay && ( content.transitionDelay===this.settings.transitionDelay || content.transitionDelay===0 ) ) {
+                    content.transitionDelay = (transDelay *= this.settings.transitionDelayIncrementor );
+                }
+
+                if (content.angle === 0) {
+                    content.angle = ( Math.atan2(content.y - 0, content.x - 0) * 180 / Math.PI );
+                }
+                
+                content.update();
+                
+                angle += step;
+                
+            
+            }
+        
+        };
+        
+        GW.prototype.handleCallback = function handleCallback (callback) {
+        
+            if ( !callback ) { return false; }
+        
+            var self = this;
+            
+            setTimeout(function () {
+            
+                callback.call(self);
+                
+            }, this.settings.transitionTime * 333 );
+        
+        };
+        
+        GW.prototype.collapseAll = function collapseAll (content, callback) {
+        
+            if ( !content || content==="" ) { return false; }
+            
+            var self = this, children = content.children, transDelay = this.settings.transitionDelay, item = null;
+            
+            for ( var i=0, l=children.length; i<l; i++ ) {
+            
+                item = children[i];
+
+                item.x = 0;
+                item.y = 0;
+                item.scale = 0.329;
+                item.opacity = 0;
+                item.transitionDelay *= 0.681;
+                item.transitionTime = self.settings.transitionTime;
+                
+                item.update();
+                
+            }
+            
+            this.handleCallback(callback);
+            
+        };
+        
+        GW.prototype.init = function init () {
+        
+            var self = this;
+        
+            this.setupContent();
+            
+            if ( !location.hash || location.hash==="" ) {
+            
+            	this.showItemWithZoom(this.content['home']);
+            
+            } else if (location.hash && location.hash!=="") {
+            
+                this.hash = location.hash.replace(/^\/|^\#|\/$/g, '');
+            
+                this.processHash(this.hash);
+                
+                if (this.hash === "home") {
+                    
+                    this.showItemWithZoom(this.content['home']);
+                    
+                }
+            
+                this.hashArray = this.hash.split('/');
+                
+                var content = this.content[this.hashArray[this.hashArray.length-1]];
+	            
+	            setTimeout(function () {
+	            
+	                self.showItemWithZoom(content);
+	                content.activate();
+	                self.injectChildren(content);
+	            
+	            }, 15);
+	            
+            }
+        
+        };
+        
+        return new GW();
+        
+    }(window));
+    </script>
+  </body>
+</html>

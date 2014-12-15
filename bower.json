@@ -21,6 +21,7 @@
     "requirejs": "~2.1.14",
     "require-less": "guybedford/require-less#feb3208ff708e03900d5e70b0147a9f6605c9c49",
     "requirejs-text": "~2.0.12",
-    "requirejs-json": "~0.0.3"
+    "requirejs-json": "~0.0.3",
+    "require-css": "~0.1.5"
   }
 }

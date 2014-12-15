@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  	<head>
+    	<meta charset="utf-8">
+		<title>test</title>
+	</head>
+	<body>
+		<div id="container" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+		<script>
+		function MotionController(options) {
+
+	        console.log('new MotionController');
+
+	        this.hasDeviceMotion = 'ondevicemotion' in window;
+
+	        // defaults
+	        this.options = {
+	            threshold: 0.1
+	        };
+
+	        this.t = null;
+	        this.x = null;
+	        this.dx = null;
+	        this.y = null;
+	        this.dy = null;
+	        this.z = null;
+	        this.dz = null;
+
+	        this.boundDeviceMotionHandler = this.handleDeviceMotion.bind(this);
+
+	        this.setUserOptions(options);
+
+	    }
+
+	    MotionController.prototype.setUserOptions = function setUserOptions(options) {
+
+	        console.log('MotionController.setUserOptions');
+
+	        for (var i in options) {
+	            if (options.hasOwnProperty(i)) {
+	                this.options[i] = options[i];
+	            }
+	        }
+
+	    };
+
+	    MotionController.prototype.reset = function reset() {
+
+	        console.log('MotionController.reset');
+
+	        this.t = new Date();
+	        this.x = null;
+	        this.y = null;
+	        this.z = null;
+
+	    };
+
+	    MotionController.prototype.start = function start() {
+
+	        console.log('MotionController.start');
+
+	        this.reset();
+
+	        if (this.hasDeviceMotion) {
+	            window.addEventListener('devicemotion', this.boundDeviceMotionHandler, false);
+	        }
+
+	    };
+
+	    MotionController.prototype.stop = function stop() {
+
+	        console.log('MotionController.stop');
+
+	        if (this.hasDeviceMotion) {
+	            window.removeEventListener('devicemotion', this.boundDeviceMotionHandler, false);
+	        }
+
+	        this.reset();
+
+	    };
+
+	    MotionController.prototype.devicemotion = function devicemotion(e) {
+
+	        console.log('MotionController.devicemotion', e);
+
+	        var current = e.accelerationIncludingGravity,
+	            currentTime,
+	            timeDiff;
+
+	        if ((this.x === null) && (this.y === null) && (this.z === null)) {
+	            this.x = current.x;
+	            this.y = current.y;
+	            this.z = current.z;
+	            return;
+	        }
+
+	        this.dx = Math.abs(this.x - current.x);
+	        this.dy = Math.abs(this.y - current.y);
+	        this.dz = Math.abs(this.z - current.z);
+
+	        console.log(this.dx, this.dy, this.dz);
+
+	        if ((this.dx > this.options.threshold && this.dy > this.options.threshold) || (this.dx > this.options.threshold && this.dz > this.options.threshold) || (this.dy > this.options.threshold && this.dz > this.options.threshold)) {
+
+	            currentTime = new Date();
+
+	            timeDiff = currentTime.getTime() - this.t.getTime();
+
+	            console.log('timeDiff', timeDiff);
+
+	            //if (timeDiff > 1000 && this.e) {
+	            console.log('dispatching motion event');
+	            var event = new CustomEvent('motion', {
+	                "detail": {
+	                    x: this.x,
+	                    y: this.y,
+	                    z: this.z,
+	                    dx: this.dx,
+	                    dy: this.dy,
+	                    dz: this.dz
+	                },
+	                bubbles: true,
+	                cancelable: false
+	            });
+
+	            document.dispatchEvent(event);
+	            this.t = new Date();
+	            //}
+	        }
+
+	        this.x = current.x;
+	        this.y = current.y;
+	        this.z = current.z;
+
+	        //console.log(this.x, this.y, this.z);
+
+	    };
+
+	    var motion = new MotionController();
+	    motion['container'] = document.getElementById('container');
+	    motion.start();
+	    document.addEventListener('motion', function (e) {
+	    	console.log('motion event', e.detail);
+	    	motion.container.innerHTML = 'x = '+e.detail.x+'<br> y = '+e.detail.y+'<br> z = '+e.detail.z;
+	    }, false);
+		</script>
+	</body>
+</html>

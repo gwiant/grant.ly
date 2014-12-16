@@ -152,13 +152,11 @@ define(function(require) {
 
         if ('XMLHttpRequest' in window && 'classList' in document.body && 'addEventListener' in document &&
             'CustomEvent' in window && !!Function.prototype.bind) {
-            //console.log('Hey, nice browser!');
             this.handleCallback(callback);
         } else {
             this.removeAppSpinner();
             this.betterBrowserMessaage();
             console.error('upgrade browser');
-            // display message
         }
 
     };
@@ -172,9 +170,13 @@ define(function(require) {
         message.style.top = '50%';
         message.style.left = '50%';
         message.style.width = '300px';
-        message.style.height = '200px';
-        message.style.margin = '-100px 0 0 -150px';
-        message.style.background = 'red';
+        message.style.height = '220px';
+        message.style.margin = '-110px 0 0 -150px';
+        message.style.border = '1px solid #0d6b88';
+        message.style.borderRadius = '11px';
+        message.style.textAlign = 'center';
+        message.style.color = '#08fbff';
+        message.innerHTML = '<h2>Sorry!</h2><p>This site requires features that your browser doesn\'t support: XMLHttpRequest, ClassList, AddEventListener, CustomEvent, Function.bind.</p><p>Try again with: <a href="http://www.google.com/chrome/">Chrome</a> or <a href="https://www.apple.com/safari/">Safari</a></p>';
 
         document.body.appendChild(message);
 

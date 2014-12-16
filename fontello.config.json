@@ -165,6 +165,12 @@
       "css": "video",
       "code": 59475,
       "src": "fontawesome"
+    },
+    {
+      "uid": "838db85de51df09e2d0c34a17dc30ff6",
+      "css": "code",
+      "code": 59374,
+      "src": "websymbols"
     }
   ]
 }

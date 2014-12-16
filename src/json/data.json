@@ -6,7 +6,7 @@
         "active": false,
         "path": "home",
         "visible": false,
-        "children": ["homeportfolio", "homesocial", "homeideas"],
+        "children": ["homeportfolio", "homesocial", "homeabout"],
         "parent": null,
         "bodyClass": "home"
     },
@@ -155,12 +155,13 @@
     "homeabout": {
         "id": "homeabout",
         "label": "About",
-        "icon": "icon-info",
+        "icon": "icon-code",
         "active": false,
         "path": "home/about",
         "visible": false,
         "children": [],
-        "parent": "home"
+        "parent": "home",
+        "href": "https://github.com/gwiant/grant.ly/"
     },
     "homecontact": {
         "id": "homecontact",

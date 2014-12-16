@@ -59,6 +59,12 @@ body {
     background-color: @backgroundGradientInner;
     border-color: @iconColor;
     overflow: hidden;
+    a, a:visited, a:hover, a:active {
+        color: @iconActiveColor;
+    }
+    p {
+        color: @iconColor;
+    }
     /*
     &.orange {
         background-color: #ff651e;
@@ -755,6 +761,13 @@ body {
                         &:before {
                             font-size: .8em;
                             margin: -5px 0 0 -5px;
+                        }
+                    }
+                    &.icon-code {
+                        line-height: 180px;
+                        &:before {
+                            font-size: .8em;
+                            margin: -5px 0 0 -45px;
                         }
                     }
                 }

@@ -176,7 +176,7 @@ define(function(require) {
         message.style.borderRadius = '11px';
         message.style.textAlign = 'center';
         message.style.color = '#08fbff';
-        message.innerHTML = '<h2>Sorry!</h2><p>This site requires features that your browser doesn\'t support: XMLHttpRequest, ClassList, AddEventListener, CustomEvent, Function.bind.</p><p>Try again with: <a href="http://www.google.com/chrome/">Chrome</a> or <a href="https://www.apple.com/safari/">Safari</a></p>';
+        message.innerHTML = '<h2>Sorry!</h2><p>This site requires features that your browser doesn\'t support: XMLHttpRequest, ClassList, AddEventListener, CustomEvent, Function.bind.</p><p>Try again with: <a href="http://www.google.com/chrome/">Chrome</a></p>';
 
         document.body.appendChild(message);
 

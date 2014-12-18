@@ -80,11 +80,15 @@ define(function(require) {
 
         //console.log('SlidesController.handleCloseInteractStart', e);
 
-        var hashArray = location.hash.substr(1).split('/');
-        hashArray.pop();
+        this.container.classList.remove('show');
 
-        this.hide();
-        location.hash = hashArray.join('/');
+        setTimeout(function() {
+            var hashArray = location.hash.substr(1).split('/');
+            hashArray.pop();
+
+            this.hide();
+            location.hash = hashArray.join('/');
+        }.bind(this), 500);
 
     };
 

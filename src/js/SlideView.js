@@ -71,7 +71,7 @@ define(function(require) {
         image.src = this.image;
 
         titleElement.classList.add('title');
-        titleElement.appendChild(document.createTextNode(this.title));
+        titleElement.appendChild(document.createTextNode(this.title.toUpperCase()));
 
         this.el = document.createElement('div');
         this.el.id = this.id;

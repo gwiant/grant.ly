@@ -26,11 +26,11 @@ define(function(require) {
                 "src/audio/mp3/interface-multimedia-beep-2.mp3"
             ],
             images: [
-                'src/images/degrees7_116492.png',
-                'src/images/degrees6a_116492.png',
-                'src/images/degrees5_116492.png',
-                'src/images/degrees9_116492.png',
-                'src/images/inner-shadow2.png'
+                'src/images/ring1.gif',
+                'src/images/ring2.gif',
+                'src/images/ring3.gif',
+                'src/images/ring4.gif',
+                'src/images/ring5.gif',
             ]
         };
 

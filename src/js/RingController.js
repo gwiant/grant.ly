@@ -48,17 +48,33 @@ define(function(require) {
             radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2)),
             degree = (radius * 20);
 
-        this.ringContainer1.style[this.vendorPrefix + 'Transform'] = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-100px)';
-        this.ringContainer1.style.transform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-100px)';
+        this.ringContainer1.style[this.vendorPrefix + 'Transform'] = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-300px)';
+        this.ringContainer1.style.transform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-300px)';
+        this.ringContainer1.style[this.vendorPrefix + 'TransformStyle'] = 'preserve-3d';
+        this.ringContainer1.style.transformStyle = 'preserve-3d';
+        this.ringContainer1.style[this.vendorPrefix + 'BackfaceVisibility'] = 'hidden';
+        this.ringContainer1.style.backfaceVisibility = 'hidden';
 
-        this.ringContainer2.style[this.vendorPrefix + 'Transform'] = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-80px)';
-        this.ringContainer2.style.transform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-80px)';
+        this.ringContainer2.style[this.vendorPrefix + 'Transform'] = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-200px)';
+        this.ringContainer2.style.transform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-200px)';
+        this.ringContainer2.style[this.vendorPrefix + 'TransformStyle'] = 'preserve-3d';
+        this.ringContainer2.style.transformStyle = 'preserve-3d';
+        this.ringContainer2.style[this.vendorPrefix + 'BackfaceVisibility'] = 'hidden';
+        this.ringContainer2.style.backfaceVisibility = 'hidden';
 
-        this.ringContainer3.style[this.vendorPrefix + 'Transform'] = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-60px)';
-        this.ringContainer3.style.transform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-60px)';
+        this.ringContainer3.style[this.vendorPrefix + 'Transform'] = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-100px)';
+        this.ringContainer3.style.transform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-100px)';
+        this.ringContainer3.style[this.vendorPrefix + 'TransformStyle'] = 'preserve-3d';
+        this.ringContainer3.style.transformStyle = 'preserve-3d';
+        this.ringContainer3.style[this.vendorPrefix + 'BackfaceVisibility'] = 'hidden';
+        this.ringContainer3.style.backfaceVisibility = 'hidden';
 
-        this.ringContainer4.style[this.vendorPrefix + 'Transform'] = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-40px)';
-        this.ringContainer4.style.transform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-40px)';
+        this.ringContainer4.style[this.vendorPrefix + 'Transform'] = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-50px)';
+        this.ringContainer4.style.transform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg) translateZ(-50px)';
+        this.ringContainer4.style[this.vendorPrefix + 'TransformStyle'] = 'preserve-3d';
+        this.ringContainer4.style.transformStyle = 'preserve-3d';
+        this.ringContainer4.style[this.vendorPrefix + 'BackfaceVisibility'] = 'hidden';
+        this.ringContainer4.style.backfaceVisibility = 'hidden';
 
     };
 

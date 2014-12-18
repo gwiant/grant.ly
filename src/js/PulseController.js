@@ -57,7 +57,7 @@ define(function(require) {
 
     PulseController.prototype.fire = function(data) {
 
-        //console.log('PulseController.fire', data);
+        console.log('PulseController.fire', data);
 
         this.model.add(data);
 

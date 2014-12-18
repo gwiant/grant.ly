@@ -29,7 +29,7 @@ define(function(require) {
         this.defaults.transitionDelay = 0;
 
         this.transitionTime = this.defaults.transitionTime;
-        this.transitionDelay = this.defaults.transitionDelay;
+        this.transitionDelay = 0;
 
         this.active = false;
         this.inTransition = false;
@@ -68,14 +68,7 @@ define(function(require) {
 
         //console.log('ContentItemView.hide', this.id);
 
-        this.el.classList.add('no-connector');
-        this.transitionTime = this.defaults.transitionTime;
-        this.transitionDelay = 0;
-        this.x = 0;
-        this.y = 0;
-        this.s = 0;
-        this.o = 0;
-        this.update();
+        this.reset().update();
 
     };
 
@@ -261,7 +254,7 @@ define(function(require) {
         //console.log('ContentItemView.reset', this.id);
 
         this.transitionTime = this.defaults.transitionTime;
-        this.transitionDelay = this.defaults.transitionDelay;
+        this.transitionDelay = 0;
         this.x = 0;
         this.y = 0;
         this.s = 0;

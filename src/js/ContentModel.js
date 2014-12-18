@@ -12,7 +12,7 @@ define(function(require) {
         this.rings = new Rings();
         this.slides = new SlidesController();
 
-        this.delay = 0.09;
+        this.delay = 0.1;
         this.instance = this;
         this.controller = controller;
         this.data = data;
@@ -124,6 +124,10 @@ define(function(require) {
             this.active = null;
         }
 
+        if (!contentItem) {
+            return false;
+        }
+
         if (!contentItem.isVisible() && !contentItem.isSlide()) {
             contentItem.show();
         }
@@ -166,7 +170,7 @@ define(function(require) {
 
         setTimeout(function() {
             this.slides.start(slides);
-        }.bind(this), 200);
+        }.bind(this), 600);
 
     };
 
@@ -181,38 +185,38 @@ define(function(require) {
 
         this.rings.fire({
             cid: 'ring1',
-            image: 'src/images/degrees7_116492.png',
+            image: 'src/images/ring1.gif',
             targetOpacity: 0.2,
             id: parentObj.id,
-            d: 0.3,
-            sAdd: 1.25
+            d: 0.5,
+            sAdd: 1.75
         });
 
         this.rings.fire({
             cid: 'ring2',
-            image: 'src/images/degrees6a_116492.png',
-            targetOpacity: 0.4,
+            image: 'src/images/ring3.gif',
+            targetOpacity: 0.2,
             id: parentObj.id,
-            d: 0.0,
-            sAdd: 0.47
+            d: 0.4,
+            sAdd: 1.37
         });
 
         this.rings.fire({
             cid: 'ring3',
-            image: 'src/images/degrees5_116492.png',
-            targetOpacity: 0.6,
+            image: 'src/images/ring4.gif',
+            targetOpacity: 0.2,
             id: parentObj.id,
-            d: 0.1,
-            sAdd: 0.52
+            d: 0.3,
+            sAdd: 0.97
         });
 
         this.rings.fire({
             cid: 'ring4',
-            image: 'src/images/degrees9_116492.png',
-            targetOpacity: 0.8,
+            image: 'src/images/ring5.gif',
+            targetOpacity: 0.2,
             id: parentObj.id,
             d: 0.2,
-            sAdd: 0.59
+            sAdd: 0.54
         });
 
         setTimeout(function() {

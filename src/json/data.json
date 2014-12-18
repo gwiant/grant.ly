@@ -1,12 +1,12 @@
 {
     "home": {
         "id": "home",
-        "label": "home",
+        "label": "Grant Wiant",
         "icon": "icon-user",
         "active": false,
         "path": "home",
         "visible": false,
-        "children": ["homeportfolio", "homesocial", "homeabout"],
+        "children": ["homeportfolio", "homesocial", "homecode", "homeabout"],
         "parent": null,
         "bodyClass": "home"
     },
@@ -152,16 +152,26 @@
         "children": [],
         "parent": "homesocial"
     },
+    "homecode": {
+        "id": "homecode",
+        "label": "Code",
+        "icon": "icon-code",
+        "active": false,
+        "path": "home/code",
+        "visible": false,
+        "children": [],
+        "parent": "home",
+        "href": "https://github.com/gwiant"
+    },
     "homeabout": {
         "id": "homeabout",
-        "label": "About",
-        "icon": "icon-code",
+        "label": "Code",
+        "icon": "icon-info",
         "active": false,
         "path": "home/about",
         "visible": false,
         "children": [],
-        "parent": "home",
-        "href": "https://github.com/gwiant/grant.ly/"
+        "parent": "home"
     },
     "homecontact": {
         "id": "homecontact",

@@ -140,6 +140,8 @@ define(function(require) {
 
         var newHash = e.newURL.split('#')[1];
 
+        _gs('track');
+
         this.triggerEvent('AppHashChange', {
             newHash: newHash
         });
@@ -170,7 +172,7 @@ define(function(require) {
         message.style.top = '50%';
         message.style.left = '50%';
         message.style.width = '300px';
-        message.style.height = '220px';
+        message.style.height = '240px';
         message.style.margin = '-110px 0 0 -150px';
         message.style.border = '1px solid #0d6b88';
         message.style.borderRadius = '11px';

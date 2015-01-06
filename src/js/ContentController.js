@@ -185,7 +185,7 @@ define(function(require) {
 
     ContentController.prototype.updateContainer = function updateContainer(tiltx, tilty, degree) {
 
-        console.log('ContentController.updateContainer', tiltx, tilty, degree);
+        //console.log('ContentController.updateContainer', tiltx, tilty, degree);
 
         this.container.style[this.vendorPrefix + 'Transform'] = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)';
         this.container.style.transform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)';

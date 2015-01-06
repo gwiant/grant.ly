@@ -15,10 +15,7 @@ require.config({
     paths: {
         'chai': 'node_modules/chai/chai',
         'sinon': 'node_modules/sinon/pkg/sinon',
-        'requirejs-text': 'bower_components/requirejs-text/text',
-        less: 'bower_components/require-less/less',
-        css: 'bower_components/require-css/css',
-        json: 'bower_components/requirejs-json/json'
+        'requirejs-text': 'bower_components/requirejs-text/text'
     },
     shim: {
         sinon: { exports: 'sinon'},

@@ -17,6 +17,18 @@ module.exports = function(grunt) {
     };
     grunt.registerTask('bowerUpdate', ['shell:bowerUpdate']);
 
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
+    gruntConfig.requirejs = {
+        compile: {
+            options: {
+                baseUrl: "./",
+                mainConfigFile: "config/require.conf.js",
+                out: "dist/grantly.js",
+                name: "index"
+            }
+        }
+    };
+
     // fontello
     grunt.loadNpmTasks('grunt-fontello');
     gruntConfig.fontello = {
@@ -178,6 +190,7 @@ module.exports = function(grunt) {
             autoWatch: true
         }
     };
+    grunt.registerTask('build', ['requirejs:compile']);
     grunt.registerTask('test', ['karma:test']);
     grunt.registerTask('cover', ['karma:cover']);
 

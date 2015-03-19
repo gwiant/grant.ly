@@ -51,11 +51,7 @@ define(function(require) {
         this.el.href = '#' + this.path;
         this.el.dataset.pathname = this.path;
         this.el.appendChild(document.createTextNode(this.label));
-        this.el.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }, false);
+        this.el.addEventListener('click', blockClick, false);
 
         if (this.controller.isTouchDevice) {
             this.el.addEventListener('touchstart', boundInteractStartHandler, false);

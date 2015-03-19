@@ -96,4 +96,10 @@ define(function(require) {
         }
     }(window));
 
+    window.blockClick = function blockClick(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    };
+
 });

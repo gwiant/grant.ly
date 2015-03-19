@@ -208,11 +208,7 @@ define(function(require) {
         this.el.appendChild(borderElement);
         this.el.classList.add('item');
         this.el.classList.add('no-connector');
-        this.el.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }, false);
+        this.el.addEventListener('click', blockClick, false);
 
         if (this.controller.isTouchDevice) {
             this.el.addEventListener('touchstart', boundInteractStartHandler, false);

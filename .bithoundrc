@@ -2,6 +2,7 @@
   "ignore": [
     "**/mocha.js",
     "test/karma-test-main.js",
-    "config/require.conf.js"
+    "config/require.conf.js",
+    "test/phantom.polyfills.js"
   ]
 }

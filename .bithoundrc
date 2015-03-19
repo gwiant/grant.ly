@@ -3,6 +3,7 @@
     "**/mocha.js",
     "test/karma-test-main.js",
     "config/require.conf.js",
-    "test/phantom.polyfills.js"
+    "test/phantom.polyfills.js",
+    "Gruntfile.js"
   ]
 }
